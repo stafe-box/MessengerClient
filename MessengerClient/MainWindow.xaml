@@ -1,0 +1,76 @@
+﻿<Window x:Class="MessengerClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+        xmlns:local="clr-namespace:MessengerClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        MinWidth="420" MinHeight="200">
+    <Grid>
+        <StackPanel
+            Orientation="Vertical">
+            <StackPanel
+                Orientation="Horizontal">
+                <Label 
+                    Content="Username"
+                    Margin="10,5,10,5"/>
+                <TextBox
+                    x:Name="UNameBox"
+                    HorizontalAlignment="Stretch"
+                    MinWidth="200"
+                    Margin="10,5,10,5" TextChanged="UNameBox_TextChanged"/>
+                <Label
+                    Margin="10,5,10,5"
+                    Content="Server IP"/>
+                <TextBox
+                    x:Name="IPBox"
+                    Margin="10,5,10,5"
+                    MinWidth="100"/>
+                <Button
+                    x:Name="ColorChooserBnt"
+                    Content="Choose Color"
+                    Margin="10,5,10,5" 
+                    Click="ColorChooserBnt_Click"/>
+                <Button
+                    x:Name="ApplyBnt"
+                    IsEnabled="False"
+                    Content="Click to register"
+                    Margin="10,5,10,5" Click="ApplyBnt_Click"/>
+            </StackPanel>
+            <StackPanel
+                Orientation="Horizontal">
+                
+                <Label
+                    Content="Your message here"
+                    Margin="10,5,10,5"/>
+                <TextBox
+                    x:Name="MessageSendBox"
+                    MinWidth="200"
+                    Margin="10,5,10,5"
+                    IsEnabled="False"/>
+                <ComboBox
+                    x:Name="Recepient"
+                    Margin="10,5,10,5"/>
+                <Button
+                    x:Name="SendBtn"
+                    Margin="10,5,10,5"
+                    Content="Send"
+                    BorderThickness="2"
+                    BorderBrush="Black" 
+                    Click="SendBtn_Click"
+                    IsEnabled="False"/>
+            </StackPanel>
+            <Label
+                Content="Messages"
+                Margin="10,5,10,5"/>
+            <RichTextBox
+                x:Name="MessageRecivedBox"
+                Margin="10,5,10,5"
+                MinHeight="200"
+                MinWidth="400"
+                IsReadOnly="True"/>
+        </StackPanel>
+    </Grid>
+</Window>
